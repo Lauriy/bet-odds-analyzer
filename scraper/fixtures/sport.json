@@ -1,0 +1,11 @@
+[
+  {
+    "model": "scraper.sport",
+    "pk": 1,
+    "fields": {
+      "name": "Tennis",
+      "created": "2017-10-27T13:07:35.591Z",
+      "modified": "2017-10-27T13:07:35.591Z"
+    }
+  }
+]

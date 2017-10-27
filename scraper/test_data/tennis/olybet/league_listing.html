@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="et">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+        <meta name="verify-paysera" content="5b271ef7c8967513af9c2b787e44a760">
+        <meta name="Content-Language" content="et">
+        <meta name="google"  content="notranslate">
+                  <meta name="description" content="OlyBet.ee Suurim valik spordipanuseid ja kasiinomänge Eestis.">
+                <link rel="shortcut icon" href="/olybet_eu/icon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/olybet_eu/icon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/olybet_eu/icon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/olybet_eu/icon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/olybet_eu/icon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/olybet_eu/icon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/olybet_eu/icon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/olybet_eu/icon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/olybet_eu/icon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/olybet_eu/icon/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/olybet_eu/icon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/olybet_eu/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/olybet_eu/icon/apple-touch-icon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/olybet_eu/icon/favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ed1c24">
+<meta name="msapplication-TileImage" content="/olybet_eu/icon/mstile-144x144.png">
+<meta name="theme-color" content="#ed1c24">
+        <title>
+                                Tennis
+     - Singapur. WTA Tour Championships Doubles
+
+ - Panused www.olybet.ee
+                    </title>
+
+        <link href='//fonts.googleapis.com/css?family=Roboto:300,500,700,400&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+                  <link href="/olybet_eu/dist/style.min.css?_=311d571" rel="stylesheet">
+            </head>
+    <body>
+      <script>
+    var dataLayer = [];
+        </script>
+
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T3MXZ2R"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T3MXZ2R');
+    </script>
+      <div class="ora-fade">
+    <div class="animation"></div>
+</div>
+
+<div id="preloader"></div>
+<div class="submenu-overlay"></div>
+
+
+<div class="template" id="message-template">
+    <li class="message" id=small-message-[[message_id]]>
+        <a href="https://www.olybet.ee/messages/index?per_page=12&page=[[ page ]]#message-[[message_id]]">
+            <div>
+                <div class="message-date">
+                    <span>[[created_at]]</span>
+                </div>
+                <div class="message-text">[[subject]]</div>
+            </div>
+        </a>
+    </li>
+</div>
+
+<div class="template" id="redirect-template">
+    <div>Suunamine. Palun oodake...</div>
+</div>
+<div class="ora-popup" data-default="1">
+    <div class="icons-block absolute close">
+        <div class="icons other icon-other-close absolute-icon"></div>
+    </div>
+
+    <div class="title"></div>
+
+    <div class="filter"></div>
+
+    <div class="container">
+        <div class="content"></div>
+    </div>
+</div>
+<div class="template" id="stats-template">
+    <table>
+        <tr>
+          <th>Panustamise informatsioon</th>
+        </tr>
+        <tr>
+            <td>Sessiooni algus</td>
+            <td class="text-right">[[last_login]]</td>
+        </tr>
+
+        <tr>
+            <td>Kõik Panused</td>
+            <td class="text-right">[[countAll]] ([[stake]])</td>
+        </tr>
+
+        <tr>
+            <td>Ootel panused</td>
+            <td class="text-right">[[countWaiting]] ([[stakeWaiting]])</td>
+        </tr>
+
+        <tr>
+            <td>Võidetud</td>
+            <td class="text-right">[[payout]]</td>
+        </tr>
+
+        <tr>
+            <td>Tulemus</td>
+            <td class="text-right">[[revenue]]</td>
+        </tr>
+    </table>
+</div>
+<div class="template" id="bonus-template">
+    <table>
+        <tr>
+          <th>Saldo</th>
+          <td style="padding-right: 150px"></td>
+        </tr>
+        <tr>
+            <td>Sport</td>
+            <td class="text-right">[[sport]]</td>
+        </tr>
+
+        <tr>
+            <td>Casino</td>
+            <td class="text-right">[[casino]]</td>
+        </tr>
+
+        <tr>
+            <td>Poker</td>
+            <td class="text-right">[[poker]]</td>
+        </tr>
+    </table>
+</div>
+<div class="campaign-layout no-active" id="campaign-result-success" style="display: none;">
+    <div class="ico-success" style="color: #78b428; font-size: 40px;" align="center"></div>
+    <div class="campaign-no-active">Õnnitleme! Osalete valitud kampaanias.</div>
+</div>
+
+<div class="campaign-layout no-active" id="campaign-result-failure" style="display: none;">
+    <div class="ico-information" style="color: #78b428; font-size: 40px;" align="center"></div>
+    <div class="campaign-no-active">Kahjuks ei ole antud kampaanias osalemine teie jaoks võimalik.</div>
+</div>
+
+          <div id="page" class="            full-width
+        ">
+      <div id="header">
+          <div class="cookie-notice">
+        <div class="text-wrapper">
+            OlyBet kasutab "küpsiseid", et tagada parim kliendikogemus meie veebilehel.
+        </div>
+        <div class="agree-wrapper">
+            <button type="button">Nõustun</button>
+        </div>
+    </div>
+          <header class="header-wrapper">
+  <div class="header-body">
+        <div class="menu-wrapper">
+      <div class="top-menu">
+        <ul class="header-half-menu pull-right clearfix">
+                                  <li class="item-register element-with-icon">
+              <a href="https://www.olybet.ee/auth/register">
+                <span class="icons-block">
+                                      <span class="ico-user-stroke ico-top-menu" style="margin-right: 5px;"></span>
+                                  </span>Loo konto
+              </a>
+            </li>
+
+                        <li class="has-submenu item-login">
+              <div class="item-text element-with-icon">
+                <span class="icons-block">
+                                        <span class="ico-login ico"></span>
+                                  </span>Logi sisse
+                                    <span class="ico-right down"></span>
+                              </div>
+
+              <div class="submenu position-left">
+                <div id="user-login-block">
+  <div class="warning-block hidden">
+      <div class="warning-block">
+          <div class="warning-message">
+              <div class="icon ico-information" style="font-size: 21px; display: inline-block;"></div>
+              <span id="login-warning-message" class="text-center"></span>
+          </div>
+      </div>
+  </div>
+  <div class="login-text">
+    <div id="external-login-message" class="text-center"></div>
+    <div class="arrow-bottom"></div>
+  </div>
+
+
+  <form onsubmit="User.login(); return false;" method="post" name="login_form" id="login_form" action="login" class="form-elements light-blue">
+    <div class="login first-block" style="">
+      <div class="row">
+        <div class="user_login_field">
+          <input
+            id="user_login_username"
+            type="text"
+            name="username"
+            class="required"
+            placeholder="E-mail / Kasutajanimi"
+          >
+        </div>
+        <div class="user_login_field">
+          <input
+            id="user_login_password"
+            type="password"
+            name="password"
+            class="required"
+            placeholder="Parool"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="forgot-password">
+          <a href="javascript:void(0);" onclick="User.resetPassword()">Unustasid parooli?</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="remember-block pull-left">
+          <div class="checkbox-block pull-left left">
+            <label>
+              <input type="checkbox" id="login-remember" name="rememberme">
+              <div class="checkbox-icon">
+                <span class="icons-block absolute">
+                  <span class="icons other icon-other-checkbox-checked absolute-icon"></span>
+                </span>
+              </div>
+            </label>
+          </div>
+          <label id="remember-label" for="login-remember">Jäta meelde</label>
+        </div>
+        <input type="submit" class="button primary width-50 pull-right" value="Logi sisse">
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="login second-block" style="display: none;">
+      <div class="code-card-input">
+        <label class="margin-top-bottom-small block" for="user_login_code">
+          <span>Kaardi koodi number</span>
+          <img src="/captcha/code" alt="" style="vertical-align: middle;" id="user_login_code_number">
+        </label>
+        <input id="user_login_code" type="password" name="code" class="required">
+        <div class="buttons">
+          <div class="layout-row fixed">
+            <div class="layout-col">
+              <button href="javascript:void(0);" onclick="User.logout();" class="button default block">
+                Tühista
+              </button>
+            </div>
+            <div class="layout-col">
+              <button href="javascript: void(0);" onclick="$('#login_form').submit();" class="button primary block">Logi sisse</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <input name="_token" type="hidden" value="tN8QBRhUnznJcPWDlh7q8eBzlO5HQswHEt9aE1sd">
+  </form>
+</div>
+
+              </div>
+            </li>
+
+          <!-- Clock/Timezone select -->
+          <li class="has-submenu">
+            <div id="clock" class="item-text">&nbsp;</div>
+                            <span class="ico-right"></span>
+                        <div class="submenu timezone-submenu-block position-right">
+              <div id="timezone-search-block" class="form-elements red-transparent">
+                <form action="https://www.olybet.ee/user/set-timezone" method="GET">
+                  <input name="timezone" id="search-timezone" type="text" placeholder="Otsing">
+                </form>
+                <div id="timezone-autocomplete-block"></div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Language select -->
+          <li class="has-submenu">
+            <div class="item-text element-with-icon">
+              <span class="icons-block icon-flag">
+                <span class="icons header-footer icon-header-flags-et"></span>
+              </span>
+                                <span class="ico-right"></span>
+                          </div>
+            <ul class="submenu submenu-list languages-submenu position-right">
+                                                                              <li>
+                    <a href="/ru">
+                      <span class="icons-block">
+                        <div class="icons header-footer icon-flag icon-header-flags-ru"></div>
+                      </span>
+                    </a>
+                  </li>
+                                                                <li>
+                    <a href="/en">
+                      <span class="icons-block">
+                        <div class="icons header-footer icon-flag icon-header-flags-en"></div>
+                      </span>
+                    </a>
+                  </li>
+                                          </ul>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="bottom-menu">
+              <div class="header-logo"><a href="/" id="logo-link"></a></div>
+              <ul class="header-half-menu clearfix">
+          <li class="item-sport element-with-icon active">
+            <a href="https://www.olybet.ee/sports" id="header-sport">
+              <span class="icons-block">
+                                    <span class="ico-big ico-sports"></span>
+                              </span>Sport
+            </a>
+          </li>
+
+                      <li class="item-betlive element-with-icon ">
+              <a href="https://www.olybet.ee/live" id="header-live">
+                <span class="icons-block">
+                                                          <span class="ico-in-play ico-big"></span>
+                                  </span>
+                <span>Livebet</span>
+              </a>
+            </li>
+
+                      <li class="item-special-games element-with-icon ">
+              <a href="https://www.olybet.ee/casino" id="header-special-games">
+                <span class="icons-block">
+                                        <span class="ico-big ico-games"></span>
+                                  </span>
+                Kasiino
+              </a>
+            </li>
+
+                      <li class="item-betgames element-with-icon ">
+              <a href="https://www.olybet.ee/games" id="header-betgames">
+                <span class="icons-block">
+                                        <span class="ico-big ico-casino"></span>
+                                  </span>
+                Mängud
+              </a>
+            </li>
+
+                    <li class="item-betgames element-with-icon ">
+            <a href="/games/bet-games/1" id="header-betgames-tv">
+              <span class="icons-block">
+                                    <span class="ico-big ico-betgames"></span>
+                              </span>Betgames
+            </a>
+          </li>
+
+
+                      <li class="item-live-dealer element-with-icon ">
+              <a href="https://www.olybet.ee/live-dealer" id="header-live-dealer">
+                <span class="icons-block">
+                                        <span class="ico-big ico-livedealer"></span>
+                                  </span>
+                Live-Diiler
+              </a>
+            </li>
+
+                      <li class="item-poker element-with-icon ">
+              <a href="https://www.olybet.ee/poker" id="header-poker">
+                <span class="icons-block">
+                                        <span class="ico-big ico-poker"></span>
+                                  </span>
+                Pokker
+              </a>
+            </li>
+
+                      <li class="item-promo element-with-icon">
+                <a href="https://promo.olybet.ee">
+                                    <span class='icons-block'><span class='ico-big ico-campaigns'></span></span>
+                                Kampaaniad
+              </a>
+            </li>
+
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</header>
+      </div>
+
+      <div id="allInRow" class="clearfix             full-width
+        ">
+          <div id="main-banner">
+                          <div class="banners">
+                <div class="left-banner"
+                                                    style="background-image: url(/olybet_eu/images/new/left_banner.jpg)"
+                                ></div>
+                <div class="right-banner"
+                                                    style="background-image: url(/olybet_eu/images/new/right_banner.jpg)"
+                                ></div>
+              </div>
+                      </div>
+                        <div id="sidebar">
+                                        <div class="sidebar-search panel-block">
+      <form
+        id="header-search"
+        method="get"
+        action="https://www.olybet.ee/search"
+        onsubmit="Header.headerSubmit(this); return false;"
+        class="form-elements blue">
+        <div>
+          <input
+            type="text"
+            id="header-search-input"
+            class=""
+            placeholder="Panuste otsing"
+            name="query"
+            value=""
+            autocomplete="Off"
+          >
+          <button type="submit" class="header-search-button element-with-icon">
+            <span class="icons-block">
+              <span class="ico ico-search"></span>
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+<div class="clearfix"></div>
+<div id="header-autocomplete-block" class="submenu"></div>
+
+  <div class="special-button with-icon with-badge panel-block">
+      <a href="https://www.olybet.ee/user/favorites" class="element-with-icon"onclick="Favorites.nonUser(event);">
+          <span class="icons-block absolute">
+              <span class="icons other icon-other-star absolute-icon"></span>
+          </span>
+          <span id="favorite-count" class="pull-right badge" style="display: none;"></span>
+          <span class="text">Lemmikud</span>
+      </a>
+  </div>
+
+<!-- Special leagues -->
+    <div class="panel-block">
+        <div class="panel-header">
+            <h3>"Kuumad" sündmused</h3>
+        </div>
+        <ul>
+
+
+                    <li class="with-icon element-with-icon">
+                                <a href="https://www.olybet.ee/bets/basketball/10788-10685#all">
+                    <span class="icons-block absolute">
+                                                    <span>
+                                <img class="icon-league-sidebar" src="//static.orakulas.lt/league_logos/euroleague.svg">
+                            </span>
+                                            </span>
+                    <span>Euroleague</span>
+                </a>
+            </li>
+                    <li class="with-icon element-with-icon">
+                                <a href="https://www.olybet.ee/bets/basketball/155-19847#all">
+                    <span class="icons-block absolute">
+                                                    <span>
+                                <img class="icon-league-sidebar" src="//static.orakulas.lt/league_logos/nba.svg">
+                            </span>
+                                            </span>
+                    <span>NBA</span>
+                </a>
+            </li>
+                    <li class="with-icon element-with-icon">
+                                <a href="https://www.olybet.ee/bets/tennis/16044-16041-20227#all">
+                    <span class="icons-block absolute">
+                                                    <span>
+                                <img class="icon-league-sidebar" src="//static.orakulas.lt/league_logos/atp.svg">
+                            </span>
+                                            </span>
+                    <span>ATP Vienna</span>
+                </a>
+            </li>
+                    <li class="with-icon element-with-icon">
+                                <a href="https://www.olybet.ee/bets/tennis/16186-16192-20228#all">
+                    <span class="icons-block absolute">
+                                                    <span>
+                                <img class="icon-league-sidebar" src="//static.orakulas.lt/league_logos/atp.svg">
+                            </span>
+                                            </span>
+                    <span>ATP Basel</span>
+                </a>
+            </li>
+                    <li class="with-icon element-with-icon">
+                                <a href="https://www.olybet.ee/bets/hockey/15170-19743#all">
+                    <span class="icons-block absolute">
+                                                    <span>
+                                <img class="icon-league-sidebar" src="//static.orakulas.lt/league_logos/khl.png">
+                            </span>
+                                            </span>
+                    <span>KHL</span>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+
+<!-- Special bet pages -->
+<div class="panel-block grey">
+    <div class="panel-header">
+        <h3>Kiirlingid</h3>
+    </div>
+    <ul>
+        <li class="with-icon element-with-icon">
+            <a href="https://www.olybet.ee/bets/all/today">
+                <span class="icons-block absolute">
+                    <span class="icons other icon-offer-today absolute-icon"></span>
+                </span>
+                <span>Tänased sündmused</span>
+            </a>
+        </li>
+
+        <li class="with-icon element-with-icon">
+            <a href="https://www.olybet.ee/bets/all">
+                <span class="icons-block absolute">
+                    <span class="icons other icon-offer-all absolute-icon"></span>
+                </span>
+                <span>Kõik sündmused</span>
+            </a>
+        </li>
+
+        <li class="with-icon element-with-icon">
+            <a href="https://www.olybet.ee/bets/last-minute">
+                <span class="icons-block absolute">
+                    <span class="icons other icon-offer-last-minute absolute-icon"></span>
+                </span>
+                <span>Peagi algavad</span>
+            </a>
+        </li>
+
+
+        <li class="with-icon element-with-icon">
+            <a href="https://www.olybet.ee/bets/gourmands">
+                <span class="icons-block absolute">
+                    <span class="icons other icon-offer-gourmand absolute-icon"></span>
+                </span>
+                <span>"Gurmee" pakkumised</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Sport list -->
+        <div class="panel-block">
+        <div class="panel-header">
+            <h3>Sport</h3>
+        </div>
+
+        <ul>
+                                <li class="with-icon  with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-football absolute-icon"></span>
+                    </span>
+                    <span>Jalgpall</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/football" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/football/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/football/13213-13191-14321-14172-19107-14090-14025-14160?league_group=TOP lygos" class="">
+                                    TOP liigad
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/football/17532-20016-17582?league_group=Statistika" class="">
+                                    Statistika
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/football/19737-19938-2577-9218-9219-8985-8982-8965-8990-18143-19771-9242?league_group=Ilgalaikė pasiūla" class="">
+                                    Panused üldvõitjale
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon  with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-basketball absolute-icon"></span>
+                    </span>
+                    <span>Korvpall</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/basketball" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/basketball/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/basketball/7194-10685-10788-154-3426-155?league_group=TOP lygos" class="">
+                                    TOP liigad
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/basketball/3460-3456-3464-3463-3452-7265-7267-19148-7194-10685-10791-3426-19847-9684?league_group=Ilgalaikė pasiūla" class="">
+                                    Panused üldvõitjale
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon  with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-tennis absolute-icon"></span>
+                    </span>
+                    <span>Tennis</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu visible">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/tennis" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/tennis/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/tennis/16186-16044-16041-16192?league_group=ATP Tour" class="">
+                                    ATP Tour
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/tennis/15817?league_group=WTA Tour" class="">
+                                    WTA Tour
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/tennis/15534-16195-16220-15532-17795-17802-17841-17843-17893-17894?league_group=Challenger Tour" class="">
+                                    Challenger Tour
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/tennis/20228-19424-20070-20069-19643?league_group=Ilgalaikė pasiūla" class="">
+                                    Panused üldvõitjale
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon  with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-hockey absolute-icon"></span>
+                    </span>
+                    <span>Jäähoki</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/hockey" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/hockey/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/hockey/15170-15173-15182?league_group=TOP lygos" class="">
+                                    TOP liigad
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/hockey/17448-17447-12849-2486-19346?league_group=Ilgalaikė pasiūla" class="">
+                                    Panused üldvõitjale
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-american_football absolute-icon"></span>
+                    </span>
+                    <span>Ameerika jalgpall</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/american_football" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/american_football/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/american_football/19872?league_group=Ilgalaikė pasiūla" class="">
+                                    Panused üldvõitjale
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-futsal absolute-icon"></span>
+                    </span>
+                    <span>Futsal</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/futsal" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/futsal/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-cricket absolute-icon"></span>
+                    </span>
+                    <span>Kriket</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/cricket" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/cricket/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-handball absolute-icon"></span>
+                    </span>
+                    <span>Käsipall</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/handball" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/handball/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/handball/11427-19939-19937?league_group=Ilgalaikė pasiūla" class="">
+                                    Panused üldvõitjale
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-darts absolute-icon"></span>
+                    </span>
+                    <span>Noolemäng</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/darts" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/darts/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-baseball absolute-icon"></span>
+                    </span>
+                    <span>Pesapall</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/baseball" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/baseball/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-boxing absolute-icon"></span>
+                    </span>
+                    <span>Poks</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/boxing" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/boxing/19987-19860?league_group=Boksas" class="">
+                                    Poks
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/boxing/18291?league_group=UFC" class="">
+                                    UFC
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-beach_volleyball absolute-icon"></span>
+                    </span>
+                    <span>Rannavõrkpall</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/beach_volleyball" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/beach_volleyball/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-rugby absolute-icon"></span>
+                    </span>
+                    <span>Rugby League</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/rugby" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/rugby/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-rugby_union absolute-icon"></span>
+                    </span>
+                    <span>Rugby Union</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/rugby_union" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/rugby_union/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-snooker absolute-icon"></span>
+                    </span>
+                    <span>Snuuker</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/snooker" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/snooker/19941?league_group=Ilgalaikė pasiūla" class="">
+                                    Panused üldvõitjale
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-formula1 absolute-icon"></span>
+                    </span>
+                    <span>Vormel 1</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/formula1" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-volleyball absolute-icon"></span>
+                    </span>
+                    <span>Võrkpall</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/volleyball" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/volleyball/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                    </ul>
+            </li>
+                                <li class="with-icon extra hidden with-submenu element-with-icon">
+                <a href="javascript:void(0);" onclick="Panel.toggle(this);">
+                    <span class="icons-block absolute">
+                        <span class="icons sport icon-winter_sports absolute-icon"></span>
+                    </span>
+                    <span>Winter sports</span>
+                    <span class="show-submenu"></span>
+                </a>
+
+                <ul class="sub-menu ">
+                    <li>
+                        <a href="https://www.olybet.ee/bets/winter_sports" class="">
+                            Kõik sündmused
+                        </a>
+                    </li>
+
+                                            <li>
+                            <a href="https://www.olybet.ee/bets/winter_sports/today" class="">
+                                Tänased sündmused
+                            </a>
+                        </li>
+
+                                                                        <li>
+                                <a href="https://www.olybet.ee/bets/winter_sports/20157-20131?league_group=Biathlon" class="">
+                                    Kahevõistlus
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/winter_sports/20159-20158?league_group=Alpine skiing" class="">
+                                    Alpine skiing
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://www.olybet.ee/bets/winter_sports/20243-20223?league_group=Bandy" class="">
+                                    Bandy
+                                </a>
+                            </li>
+                                                            </ul>
+            </li>
+
+                    <li class="more element-with-icon">
+                <a href="javascript:void(0);" class="more-button" onclick="Sidebar.toggleSports(this);">
+                    <span class="icons-block">
+                        <span class="icons other icon-other-more"></span>
+                    </span>
+                </a>
+            </li>
+                </ul>
+    </div>
+
+
+<!-- Bet services -->
+<div class="panel-block">
+    <div class="panel-header">
+        <h3>Sündmused</h3>
+    </div>
+    <ul>
+
+                                    <li class="with-icon element-with-icon">
+                <div class="only-show-submenu" onclick="Popup.open({iframe: true, url: '//stats.olybet.eu/#/et/statistics/competition/566/136958/overview'})">
+                     <span class="icons-block absolute">
+                        <span class="icons other icon-other-results absolute-icon"></span>
+                    </span>
+                    <span>Statistika</span>
+                </div>
+            </li>
+
+
+                    </ul>
+</div>
+                                </div>
+
+                        <div id="rightbar">
+                  <div class="rightbar-body">
+                      <div id="cart" style="display: none;">
+    <div id="cart-block" class="cart-type-tab opened">
+        <div class="cart-header" onclick="Betslip.tab.toggle(this);">
+            <h4>
+                <span>Pilet</span>
+            </h4>
+            <div id="fix-cart" title="" class="element-with-icon" onclick="Betslip.toggleLayoutType(this);">
+                <span class="icons-block absolute">
+                    <span class="icons other icon-other-anchor absolute-icon"></span>
+                </span>
+            </div>
+            <span class="toggle"></span>
+        </div>
+
+        <div class="cart-body" style="display: block;">
+
+            <!-- Loading animation -->
+            <div id="cart_preloader" style="display: none;">
+                <div class="valign_container">
+                    <div class="preloader-icon">
+                        <div class="preloader dark"></div>
+                    </div>
+                    <div class="preloader-text">
+                        <p>Andmete kontroll</p>
+                        <p>Protsess võtab aega vähem, kui minuti.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item list and bet type tabs -->
+            <div id="cart_item_list" class="accordition-block cart-state cart-state-0 cart-state-1 cart-state-4 cart-state-6 cart-state-7">
+                <div class="cart-tabs-block">
+                    <div class="shadow bottom"></div>
+                    <div class="cart-tabs">
+                        <div id="bid-type-single" onclick="Betslip.setType('single')">
+                            <span>Üksikpanus</span>
+                        </div>
+                        <div id="bid-type-multi" onclick="Betslip.setType('multi')">
+                            <span>Mitmikpanus</span>
+                        </div>
+                        <div id="bid-type-system" onclick="Betslip.setType('system')">
+                            <span>Süsteempanus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-with-scrollbar">
+                    <ul class="orders_list">
+                        <li class="empty_cart_item">
+                            <div class="empty_cart">Pilet on tühi</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Betslip controls -->
+            <div id="cart_bid" class="cart-bid">
+                <div class="cart-bid-body">
+
+                    <!-- Success message -->
+                    <div class="cart-state cart-state-2">
+                        <div class="cart-message-block">
+                            <div class="text text-center">
+                                                                    <h4>Panus vastu võetud </h4>
+                                                            </div>
+                                                    </div>
+
+                    </div>
+
+                    <div class="relative">
+                        <div class="shadow top"></div>
+                    </div>
+
+                    <!-- Total odd -->
+                    <div class="cart-state cart-state-0 cart-state-1 cart-state-7 cart-parent-block with-shadow">
+                        <div class="table width-100">
+                            <div class="table-cell text-left">
+                                <div class="text bold cart-state cart-state-0 cart-state-1 cart-state-4">Koefitsient kokku</div>
+                                <div class="text bold cart-state cart-state-6 cart-state-7">Panuse summa</div>
+                            </div>
+                            <div class="table-cell text-right">
+                                <div id="ratio" class="bold"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Error messages -->
+                    <div class="cart-errors"></div>
+
+                    <!-- Line -->
+                    <div class="line cart-state cart-state-2"></div>
+
+                    <div class="bid-info">
+                        <table class="fixed width-100" border="0" cellspacing="0" cellpadding="0">
+                            <!-- System bet combinations -->
+                            <tr class="cart-state cart-state-6">
+                                <td colspan="2">
+                                    <div id="betslip-combinations">
+                                        <!-- placeholder -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Live odd change setting -->
+                            <tr class="cart-state cart-state-3 cart-state-4">
+                                <td colspan="2">
+                                    <div>
+                                        <div class="margin-top-bottom-small">
+                                            <label for="live-odd-change">Võtta vastu järgnevad koef. muudatused panustes:</label>
+                                        </div>
+                                        <select id="live-odd-change" class="selectric-block grey" onchange="Betslip.live.setOddChange($(this).val())">
+                                            <option value="1">Kõrgemad koefitsiendid</option>
+                                            <option value="0">Mitte vastu võtta panused, mille koef. muudetakse.</option>
+                                            <option value="2">Kõik koefitsiendid</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Live quick bet -->
+                            <tr class="cart-state cart-state-3 cart-state-4">
+                                <td>Kiirpanus</td>
+                                <td>
+                                    <div class="pad-top-bottom-small pad-top-medium">
+                                        <button
+                                            type="button"
+                                            class="button grey small block no-margin-bottom quick-bet pull-right"
+                                            data-lang="et"
+                                            onclick="Betslip.live.toogleQuickBet()">
+                                            <span class="if-on">Sees</span>
+                                            <span class="if-off">Lülita välja</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Stake amount input -->
+                            <tr class="cart-state cart-state-0 cart-state-1 cart-state-3 cart-state-4 cart-state-6 cart-state-7">
+                                <td>
+                                    <div class="text form-elements ">
+                                        <label class="text-label" for="cart_bid_amount">
+                                            <span class="icons-block">
+                                                <span class="icons other icon-other-bid hide-on-1280 right-margin-small"></span>
+                                            </span>Panus
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="form-elements dark pad-top-bottom-small">
+                                        <input type="text" class="small text-right cart-bid-amount" id="cart_bid_amount" value="">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Fixed stake amount controls -->
+                            <tr class="cart-state cart-state-0 cart-state-3 cart-state-4">
+                                <td colspan="2">
+                                    <div class="fixed-amounts">
+                                        <div class="fixed-amounts-list clearfix pad-top-bottom-small">
+                                                                                            <div class="button grey amount-item" onclick="Betslip.incStake(1)">
+                                                    <span class="amount bold">+1</span>
+                                                </div>
+                                                                                            <div class="button grey amount-item" onclick="Betslip.incStake(5)">
+                                                    <span class="amount bold">+5</span>
+                                                </div>
+                                                                                            <div class="button grey amount-item" onclick="Betslip.incStake(10)">
+                                                    <span class="amount bold">+10</span>
+                                                </div>
+                                                                                            <div class="button grey amount-item" onclick="Betslip.incStake(50)">
+                                                    <span class="amount bold">+50</span>
+                                                </div>
+                                                                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Line -->
+                            <tr class="cart-state cart-state-0 cart-state-1 cart-state-4 cart-state-6 cart-state-7">
+                                <td colspan="2">
+                                    <div class="line margin-top-bottom-small"></div>
+                                </td>
+                            </tr>
+
+                            <!-- Expected win -->
+                            <tr  class="cart-state cart-state-0 cart-state-1 cart-state-4 cart-state-6 cart-state-7">
+                                <td class="pad-top-bottom-small">
+                                    <div class="text bold form-elements">
+                                        <span class="icons-block">
+                                            <span class="icons other icon-other-winning right-margin-small hide-on-1280"></span>
+                                        </span>
+                                        <label class="text-label">
+                                            Võimalik võit
+                                        </label>
+                                    </div>
+                                </td>
+                                <td align="right" class="pad-top-bottom-small">
+                                    <div>
+                                        <div class="win-lt bold">
+                                            <span id="expected_win_amount"></span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Quick bet confirm -->
+                            <tr class="text cart-state cart-state-5">
+                                <td colspan="2">
+                                    Lihtne ja kiire moodus panustamiseks: </b>Valige "kiirpanus"
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Control buttons -->
+                    <div class="cart-buttons">
+                        <div class="bid-buttons">
+
+                            <div class="cart-state cart-state-2 cart-state-0 cart-state-4 cart-state-6 table-cell" style="width: 25%">
+                                <div class="button default absolute-button" onclick="Betslip.reset(); return false;">
+                                    <span class="icons-block absolute">
+                                        <span class="icons other icon-other-trash absolute-icon"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="cart-state cart-state-2 table-cell">
+                                <div class="button primary" onclick="Betslip.resetState(); return false;">
+                                    Tagasi
+                                </div>
+                            </div>
+
+                            <div class="cart-state cart-state-0 cart-state-4 cart-state-6">
+                                <div class="button primary" onclick="if( ! $(this).hasClass('disabled')) { Betslip.bet(); } return false;">
+                                    Tee panus
+                                </div>
+                            </div>
+
+                            <div class="cart-state cart-state-1 cart-state-7">
+                                <div class="button default" onclick="Betslip.resetState(); return false;">
+                                    Tagasi
+                                </div>
+                            </div>
+
+                            <div class="cart-state cart-state-1 cart-state-7">
+                                <div class="button primary" onclick="Betslip.bet(); return false;">
+                                    Kinnita
+                                </div>
+                            </div>
+
+
+                            <div class="cart-state cart-state-5">
+                                <button
+                                    type='button'
+                                    class="button default block no-side-paddings no-margin-bottom"
+                                    onclick="Betslip.live.toogleQuickBet(false)">
+                                    Tagasi
+                                </button>
+                            </div>
+
+                            <div class="cart-state cart-state-5">
+                                <button
+                                    type='button'
+                                    class="button primary block no-side-paddings no-margin-bottom"
+                                    onclick="Betslip.live.toogleQuickBet(true)">
+                                    Kinnita
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+                      <ul class="rightbar-games-list clearfix">
+
+        </ul>
+                  </div>
+              </div>
+                    <div id="mainbar" class="">
+              <div class="mainbar-body allInRow-element-body">
+
+                    <div class="extra-block" id="extra-block">
+                    <div id="extra-right-block" class="subevents-ajax-block event-children"></div>
+            </div>
+
+    <div class="leagues-block" id="leagues-block">
+
+
+
+        <!-- Leagues -->
+                    <div class="sport-block selected">
+                <div class="sport-header" onclick="Panel.toggle(this);">
+                    <div class="background sport-background background-tennis"></div>
+                    <div class="header-block">
+                        <div class="skew-block"></div>
+                        <h3>
+                            <span class="icons-block absolute">
+                                <span class="icons sport icon-tennis absolute-icon"></span>
+                            </span>
+                            <span>Tennis</span>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="sport-body">
+                                            <div class="ora-heading closed with-hover with-icons with-extra-icons league" onclick="Betting.loadParents(this, 15532, 1);">
+                            <div class="header-block">
+                                <h4>
+                                    <span class="icons-block absolute">
+                                                                                     <span class="icons leagues icon-leagues absolute-icon"></span>
+                                                                            </span>
+                                    <span>Peruu. ATP Lima Challenger Doubles</span>
+                                </h4>
+                            </div>
+
+                            <div class="extra-icons">
+                                <div class="extra-icons-block">
+
+
+                                    <div class="toggle-button">
+                                        <span class="icons-block absolute">
+                                            <span class="icons other icon-other-toggle absolute-icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="ora-heading closed with-hover with-icons with-extra-icons league" onclick="Betting.loadParents(this, 17795, 1);">
+                            <div class="header-block">
+                                <h4>
+                                    <span class="icons-block absolute">
+                                                                                     <span class="icons leagues icon-leagues absolute-icon"></span>
+                                                                            </span>
+                                    <span>Vietnam. ATP Ho Chi Minh Challenger</span>
+                                </h4>
+                            </div>
+
+                            <div class="extra-icons">
+                                <div class="extra-icons-block">
+
+
+                                    <div class="toggle-button">
+                                        <span class="icons-block absolute">
+                                            <span class="icons other icon-other-toggle absolute-icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="ora-heading closed with-hover with-icons with-extra-icons league" onclick="Betting.loadParents(this, 20231, 1);">
+                            <div class="header-block">
+                                <h4>
+                                    <span class="icons-block absolute">
+                                                                                     <span class="icons leagues icon-leagues absolute-icon"></span>
+                                                                            </span>
+                                    <span>ITF Tour. Saguenay, Canada. Naised</span>
+                                </h4>
+                            </div>
+
+                            <div class="extra-icons">
+                                <div class="extra-icons-block">
+
+
+                                    <div class="toggle-button">
+                                        <span class="icons-block absolute">
+                                            <span class="icons other icon-other-toggle absolute-icon"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+
+            </div>
+
+                  </div>
+          </div>
+      </div>
+
+      <div id="footer_guarantor"></div>
+
+                <div class="clearfix"></div>
+          <div id="footer">
+                                <footer>
+    <div class="footer-wrapper">
+        <div class="footer-first-row">
+            <div class="footer-content">
+                                    <iframe style="border: none; width: 1366px; height: 405px" src="https://promo.olybet.ee/sitepartet/footer"></iframe>
+                            </div>
+        </div>
+
+        <div class="footer-second-row">
+            <div>
+                <span>Serveri aeg:</span>
+                <span class="nowrap">
+                    <span id="server-time">2017-10-27 11:53:18</span>
+                    <span>(UTC)</span>
+                </span>
+            </div>
+            <div>Teie IP: 195.50.203.192</div>
+        </div>
+
+    </div>
+</footer>
+                        </div>
+
+  </div>
+      <script type="text/javascript">
+    var debug               = false;
+
+    var currency            = 'EUR';
+    var currency_id         = '102';
+    var brand_id            = '6';
+
+    var user                = false;
+    var user_id             = '';
+    var user_name           = ' ';
+    var csrf                = 'tN8QBRhUnznJcPWDlh7q8eBzlO5HQswHEt9aE1sd';
+    var lang                = 'et';
+    var serverTimeOffset    = +3;
+    var BOOKING             = false;
+    var PRINT_AFTER_BOOK    = true;
+    var SOCKET_SERVER       = 'https://socket.orakulas.lt:3001';
+    var URI                 = '/bets/tennis/today';
+    var OLYBET              = true;
+    var SOURCE_ID           = 1;
+    var SESSION_ID          = '4819e7afc7ea897e2d64339fecb4ae9e271a5406';
+    var MERCHANT_ID         = '';
+    var CASHIER_API         = '';
+    var SHOW_LOGIN_FORM     = '';
+</script>
+
+<script type="text/javascript">
+    var tr = {
+        // Betslips
+        outcome: "valik",
+        error: "Viga",
+        bad_login: "Valed konto andmed v&otilde;i kontot ei eksisteeri.",
+        system_error: "S&uuml;steemi viga. Vale serveripoolne vastus.",
+        empty_cart: "Pilet on t&uuml;hi",
+        too_many_event: "Suurim s&uuml;ndmuste arv piletis on ",
+        empty_stake: "Panuse summa ei saa olla 0",
+        must_login: "Panuse vormistamiseks logi sisse",
+        bid_failed: "Panus eba&otilde;nnestus",
+        live_rules: "Live-panustamise reeglid",
+        choose_banker: "Kliki siia, et valida pankur",
+        combination: "Kombinatsioonid",
+        win: "V&otilde;it",
+        coef: "Koef.",
+        no_systems: "V&otilde;imalikud s&uuml;steemid puuduvad",
+        system_choose: "S&uuml;steempanuse valikud",
+        must_select_combination: "Palun vali kombinatsioon",
+        one_bid_amount: "Panus s&uuml;ndmusele",
+        diff: "Erinevus",
+        refresh_page: "Palun värskendage lehekülge",
+        flash_required_for_netent: "Valitud mängu kasutamiseks palun aktiveerige enda veebilehitsejas flash. Kui vajate abi kontakteeruge klienditoega.",
+        validator: {
+            missing_google_birthday: "Konto registreerimisel Google+ kontoga peab teie s&uuml;nnikuup&auml;ev olema avalik. Palun muutke Google+ konto seadeid ja registreeruge seej&auml;rel OlyBeti konto.",
+            file_size: "Faili suurus peab olema väiksem, kui 5 MB"
+        },
+
+        user: {
+            profile_updated: "Konto uuendamine oli edukas"
+        },
+
+        billing: {
+            deposit: "Sissemakse",
+            amount: "Sisestage summa, mille soovite &uuml;le kanda",
+            enter_personal_data: "Palun sisestage enda isikuandmed.",
+            success: "Operatsioon oli edukas.",
+            bank_accounts: "Pangakonto seaded"
+        },
+
+        // Live chat
+        live_support: "Online tugi",
+        leave_feedback: "J&auml;tke meile s&otilde;num",
+
+        // Other
+        reset_password: "Parooli meeldetuletus",
+        gourmet_explain: "Minimaalne kombineeritud s&uuml;ndmuste arv on  4",
+        no_new_messages: "Uusi s&otilde;numeid ei ole",
+        correct_form_errors: "Palun korrigeerige punasega markeeritud lahtrid.<br>Vajadusel kontakteeruge support@olybet.com",
+
+        favorites: {
+            title: "Lemmikud",
+            login: "Lemmikute nimekirja täiendamiseks palun logige kontosse sisse.",
+            participants: "Meesk.-d/Mängijad",
+            add: "Lisa liiga lemmikutesse",
+            added: "Meeskond / Mängija on lisatud Sinu lemmikutesse",
+            remove: "Eemalda liiga lemmikutest"
+        },
+
+        anchor: {
+            show: "Valitud panused",
+            hide: "Kinnitada pilet"
+        },
+
+        finish_registration: {
+            title: "Registreerumine on pooleli. Lõpeta registreerumine.",
+            content: "Enne sissemakset ning mängimist, lõpeta registreerumine. <br>",
+            button: "Jätka"
+        },
+
+        poker_have_to_login: "Logi sisse "
+    };
+</script>
+<script type="text/javascript">
+        var url = {
+        betslip: {
+            makeBet: 'https://www.olybet.ee/betslip/make-bet',
+            validateBet: 'https://www.olybet.ee/betslip/validate-bet'
+        },
+        user: {
+            login: 'https://www.olybet.ee/auth/login',
+            mSignLogin: 'https://www.olybet.ee/auth/msign-login',
+            mSignPopup: 'https://www.olybet.ee/msign-popup',
+            logout: 'https://www.olybet.ee/auth/logout',
+            update: 'https://www.olybet.ee/auth/update',
+            register: 'https://www.olybet.ee/auth/registration-finish',
+            revert: 'https://www.olybet.ee/auth/revert',
+            getBalance: 'https://www.olybet.ee/user/balance',
+            getStatus: 'https://www.olybet.ee/user/status',
+            deleteMessage: 'https://www.olybet.ee/messages/delete',
+            deleteCheckedMessages: 'https://www.olybet.ee/messages/delete-checked',
+            readMessage: 'https://www.olybet.ee/messages/read',
+            readAllMessages: 'https://www.olybet.ee/messages/read-all',
+            readCheckedMessages: 'https://www.olybet.ee/messages/read-checked',
+            getHistory: 'https://www.olybet.ee/user/history',
+            changePassword: 'https://www.olybet.ee/auth/change-password',
+            changeLostPassword: 'https://www.olybet.ee/auth/change-lost-password',
+            resetPassword: 'https://www.olybet.ee/auth/reset-password',
+            changePhone: 'https://www.olybet.ee/auth/change-phone',
+            verifyPhone: 'https://www.olybet.ee/auth/verify-phone',
+            verifyResetPasswordPhone: 'https://www.olybet.ee/auth/verify-reset-password-phone',
+            stats: 'https://www.olybet.ee/user/stats',
+            saveLimit: 'https://www.olybet.ee/user/limits',
+            savePromotionalCode: 'https://www.olybet.ee/user/promotional-code',
+            favorites: {
+                toggleLeague: 'https://www.olybet.ee/user/favorites/toggle-league',
+                getStatus: 'https://www.olybet.ee/user/favorites/status',
+                addParticipant: 'https://www.olybet.ee/user/favorites/add-participant',
+                removeParticipant: 'https://www.olybet.ee/user/favorites/remove-participant',
+                participants: 'https://www.olybet.ee/utils/participants',
+                leagues: 'https://www.olybet.ee/utils/leagues',
+            },
+            bonusStats: 'https://www.olybet.ee/user/bonus-stats',
+            claimCampaign: 'https://www.olybet.ee/campaign/opt-in'
+        },
+        event: {
+            sport_popular: 'https://www.olybet.ee/bet/popular-events',
+            parents: 'https://www.olybet.ee/bet/parents'
+        },
+        capcha: 'https://www.olybet.ee/captcha/index',
+        contacts: 'https://www.olybet.ee/contacts',
+        search_index: 'https://www.olybet.ee/search-index',
+        billing: {
+            deposit: 'https://www.olybet.ee/billing/deposit',
+            withdraw: 'https://www.olybet.ee/billing/withdraw',
+            withdraw_history: 'https://www.olybet.ee/billing/withdraw-history',
+            withdraw_cancel: 'https://www.olybet.ee/billing/withdraw-cancel',
+            bank_accounts: {
+                editor: 'https://www.olybet.ee/billing/bank-account-editor',
+                get: 'https://www.olybet.ee/billing/bank-accounts',
+                add: 'https://www.olybet.ee/billing/add-bank-account'
+            }
+        },
+        utils: {
+            timezones: 'https://www.olybet.ee/utils/timezones',
+            server_time: 'https://www.olybet.ee/utils/server-time',
+            set_timezone: 'https://www.olybet.ee/user/set-timezone?timezone='
+        },
+        poker: {
+            login: 'https://www.olybet.ee/poker/xhr-login',
+            link: 'https://www.olybet.ee/poker/link',
+        },
+    };
+</script>
+
+<!-- Start of olybethelp Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="olybethelp.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+/*]]>*/</script>
+<!-- End of olybethelp Zendesk Widget script -->
+
+<script>
+zE(function() {
+  $zopim(function() {
+    $zopim.livechat.setLanguage(lang);
+      });
+});
+</script>
+
+<iframe style="display:none" src="https://wloegpartners.adsrv.eacdn.com/Processing/Pixels/Registration.ashx?mid=6"></iframe>
+
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src="/js/dist/vendor.min.js?_=311d571"></script>
+    <script src="/js/dist/app.min.js?_=311d571"></script>
+
+
+
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3cab448eb1","applicationID":"3430940","transactionName":"MgBXbEUDDEBWBkxYXAtKdFtDCw1dGCddRXAKC0FKWA4OVkUlX1RHLAtRXU8=","queueTime":0,"applicationTime":718,"atts":"HkdUGg0ZH04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
